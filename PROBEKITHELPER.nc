@@ -2,16 +2,24 @@
 O9102(ProbeKit Helper Program)
 (The Parent Command of ProbeKit, Single Axis Probing)
 
-(User Variables)
-#V11=3.0 'Axis Probe Travel Distance
+(User Variables V30+)
+#V30 = 0
+#V31 = 3.0 'Axis Probe Travel Distance
 
-(ProbeKit Private Variables)
+
+(Corner)
+#V35 = 1 'X Movement Distance
+#V36 = 1 'Y Movement Distance
+#V37 = 1 'Z Drop Distance
+#V40 = 0 'X Probe Start Position
+#V41 = 0 'Y Probe Start Position
+#V42 = 0 'Z Probe Safe Position
+
+(ProbeKit Logic Private Variables)
 #V1=0
 #V2=0
 #V10=0
 #V12=0.0
-
-G0 X0 Y0
 
 #:FIXTUREOFFSET
 #PRINT "Choose Fixture Offset E Number. Such as 1 for E1"
@@ -50,7 +58,7 @@ G0 X0 Y0
 #:AXISPROBE
 #PRINT "Axis Probing"
 (Usage: R1-2. R2+5. R3+2. M98 P9100)
-R1+V1. R2+V10. R3+V11.
+R1+V1. R2+V10. R3+V31.
 M98 P9100
 GOTO:END
 
@@ -60,6 +68,7 @@ GOTO:END
 #INPUT V12
 #PRINT "You have selected bore diameter",V12," YES=ENTER, NO=1"
 #INPUT V2
+#IF V2=1 THEN GOTO:XYBORE
 R1+4. R2+V10. R3+V12.
 M98 P9100
 #GOTO:END
@@ -70,10 +79,39 @@ M98 P9100
 #INPUT V12
 #PRINT "You have selected boss diameter",V12," YES=ENTER, NO=1"
 #INPUT V2
+#IF V2=1 THEN GOTO:XYBOSS
 R1+5. R2+V10. R3+V12.
 M98 P9100
 #GOTO:END
 
+#:CORNER
+#PRINT "Corner Probing"
+#Print "Choose Corner. Enter Number 1-4"
+#Print "1 -- 2"
+#Print "|    |"
+#Print "|    |"
+#Print "3 -- 4"
+#INPUT V12
+#PRINT "You have selected corner",V12," YES=ENTER, NO=1"
+#INPUT V2
+#IF V2=1 THEN GOTO:CORNER
+#:CORNERDISTANCEINPUT
+#PRINT "Input Distance on XY from starting point to probe:"
+#PRINT "-----V----"
+#PRINT "|         |"
+#PRINT "|         |"
+#PRINT "|         <"
+#PRINT "|         |"
+#PRINT "----------"
+#INPUT V12
+#PRINT "You have selected distance",V12," YES=ENTER, NO=1"
+#INPUT V2
+#IF V2=1 THEN GOTO:CORNERDISTANCEINPUT
+(R1=Selection, R2=Fixture Offset, R3=Probe Distance off Start Corner)
+#R3 = V12+100.
+R1+R3 R2+V10. R3+V12. 
+M98 P9100
+#GOTO:END
 
 #:ERROR
 #PRINT "ERROR: Probe type not found"

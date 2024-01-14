@@ -16,13 +16,21 @@ O9100(ProbeKit)
 
 (---XY Bore Probing: R1+4. ---)
 (R1=Selection, R2=Fixture Offset, R3=Approximate Bore Diameter)
-(Usage:Jog to center of bore, R1+4. R2+5. R3+5. M98 P9100)
+(Usage: Jog to center of bore, R1+4. R2+5. R3+5. M98 P9100)
 (Results: R1=Center X, R2=Center Y, R4=Probe Diameter)
 
 (---XY Boss Probing: R1+5. ---)
 (R1=Selection, R2=Fixture Offset, R3=Approximate Boss Diameter)
-(Usage:Jog to center of boss, R1+5. R2+5. R3+5. M98 P9100)
+(Usage: Jog to center of boss, R1+5. R2+5. R3+5. M98 P9100)
 (Results: R1=Center X, R2=Center Y, R4=Probe Diameter)
+
+(---Corner Probing: R1+101 to R1+104 or R1-101 to R1-104 ---)
+(R1=Selection, R2=Fixture Offset, R3=Probe Distance off Start Corner)
+(R1=Corner to Probe, use negative value for inside corner)
+( 101---102 )
+( |      |  )
+( 103---104 )
+(Usage: Jog to corner, R1+101. R2+5. R3+5. M98 P9100)
 
 (---ProbeKit User Variables---)
 #V10 = 1 'Tool Number for tool height offset
@@ -31,7 +39,7 @@ O9100(ProbeKit)
 #V13 = 1.25 'Bore Overtravel Multiplier
 #V14 = 1.5 'Boss Overtravel Multiplier
 #V15 = 0.75 'Boss/Corner Z Drop Height
-
+#V16 = 1.25 'Corner Off edge travel distance
 
 (---Setup---)
 M64 (Switch to Spindle Probe)
@@ -70,12 +78,14 @@ G90 (Absolute Mode)
 #V2 = R2 'Set Input Fixture Offset
 #IF (R1 = 4) THEN GOTO:BOREPROBE 'Bore Probe
 #IF (R1 = 5) THEN GOTO:BOSSPROBE 'Boss Probe
+#IF (R1 > 100) THEN GOTO:CORNERPROBE 'Corner Probe
+#IF (R1 < -100) THEN GOTO:INTERNALCORNERPROBE 'Corner Probe
 #V1 = 0 'Direction of probe movement 1.0 or -1.0
 #IF (R1 = 3) THEN GOTO:FAULT
 #IF (R1 < 0) THEN V1 = -1.0
 #IF (R1 > 0) THEN V1 = 1.0
 #IF (R1 = 0) THEN GOTO:FAULT
-#IF (R1 > 5) THEN GOTO:FAULT
+#IF (R1 > 6) THEN GOTO:FAULT
 #IF (R1 < -3) THEN GOTO:FAULT
 #V3 = ABS(R1) 'Absolute value of R1 Axis Selection
 #R5 = (R3 * V1) 'Calculated Travel distance of probe
@@ -174,6 +184,63 @@ L9101 R1+2. (COMPUTE CENTER)
 #FX(V2) = R1
 #FY(V2) = R2
 G1 F+R4 X+R1 Y+R2 (Move to center)
+#GOTO:END
+
+#:CORNERPROBE 'Corner Probe two points
+#V17 = 0 'X Axis Direction Flag
+#V18 = 0 'Y Axis Direction Flag
+#IF (R1=101) THEN V17 = 1 'X Axis Direction Flag
+#IF (R1=101) THEN V18 = -1 'Y Axis Direction Flag
+#IF (R1=102) THEN V17 = -1 'X Axis Direction Flag
+#IF (R1=102) THEN V18 = -1 'Y Axis Direction Flag
+#IF (R1=103) THEN V17 = 1 'X Axis Direction Flag
+#IF (R1=103) THEN V18 = 1 'Y Axis Direction Flag
+#IF (R1=104) THEN V17 = -1 'X Axis Direction Flag
+#IF (R1=104) THEN V18 = 1 'Y Axis Direction Flag
+(X Axis Probe)
+#R7 = V21 + (R3 * V18)
+G1 F+R4 Y+R7 (Move to Y)
+#R7 = V20 - (V16 * V17)
+G1 F+R4 X+R7 (Move to X)
+#R7 = V22 - V15
+G1 F+R4 Z+R7 (Move to Z)
+#R5 = AZ
+#R6 = AY
+#R7 = AX + (V16 * V17)
+L9101 R1+1. X+R7. Y+R6. Z+R5. F+R4. P1 (Probe X and back to start)
+#R7 = V22 'Move to Z safe height
+G1 F+R4 Z+R7 (Move to Z)
+#R7 = V20
+#R8 = V21
+G1 X+R7 Y+R8 (Move to starting X and Y)
+(Y Axis Probe)
+#R7 = V20 + (R3 * V17)
+G1 F+R4 X+R7 (Move to X)
+#R7 = V21 - (V16 * V18)
+G1 F+R4 Y+R7 (Move to Y)
+#R7 = V22 - V15
+G1 F+R4 Z+R7 (Move to Z)
+#R5 = AZ
+#R6 = AX
+#R7 = AY + (V16 * V18)
+L9101 R1+1. X+R6. Y+R7. Z+R5. F+R4. P2 (Probe Y and back to start)
+#R7 = V22 'Move to Z safe height
+G1 F+R4 Z+R7 (Move to Z)
+#R7 = V20
+#R8 = V21
+G1 X+R7 Y+R8 (Move to starting X and Y)
+(Z Axis Probe)
+#R5 = AZ - V15
+#R6 = AY
+#R7 = AX
+L9101 R1+1. X+R7. Y+R6. Z+R5. F+R4. P3 (Probe Z and back to start)
+(Set Values)
+#FX(V2) = PX1+((V11/2)*V17)
+#FY(V2) = PY2+((V11/2)*V18)
+#FZ(V2)=(ABS(H(V10))+PZ3)*-1 'Account for tool height offset
+#GOTO:END
+
+#:INTERNALCORNERPROBE 'Corner Probe two points
 #GOTO:END
 
 #:FAULT
