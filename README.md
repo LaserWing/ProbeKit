@@ -1,11 +1,25 @@
 # ProbeKit Fadal Renishaw Probing Macros
 Fadals are great machines but unfortunately their probing routines are lacking, and the community's willingness to share is low. Now that these machines are largely moved towards small operations and home shops, there is a need to divorce from the closed macro aspect and share the knowledge needed to improve all our lives.
 
-## Macro Functions
+## 09100 ProbeKit Macro Chooser
+This macro is the main macro that allows you to select the other macros. It is not required to use the other macros, but it is quick and prompt based. 
+
+## 09102 SetAxis Macro
+This macro is for use with Haimer style 3d tasters. It is not required to use the other macros, but it is good for setup when a probe is not suitable.
+
+## 09101 Probe Kit Macro Helper
+This macro is a helper macro that allows you enter the correct values with printed prompts. It is not required to use the other macros, but it is good for setup. 
+
+## O9100 ProbeKit Macro Subprogram
 * Single Axis
 * Bore
 * Boss
 * Corner
+
+Useful for calling from other programs or from MDI. Use the helper macro to use standalone.
+This macro was primarily designed to make built L9101 easier to use since it relies on R values and absolute positioning.
+
+Most of these macros start from a known position and return to that position. This is to allow for easy chaining of probing operations.
 
 ## Command Structure 
 Call `M98 P9100` after setting R values
@@ -61,13 +75,17 @@ Usage:
 4. Probe moves start point
 
 ###XY Corner Probing: R1+6.
-`R1=Selection`
+`R1=Selection of Corner 101->104`
 `R2=Fixture Offset`
-`R3=Corner Selection (1-4)`
+`R3=Probe Distance Off Start Corner`
+`101-----102`
+`|         |`
+`|         |`
+`104-----103`
 ##### Results and Returns:
 Usage:
 1. Jog above corner
-2. R1+6. R2+5. R3+1. M98 P9100
+2. R1+101. R2+5. R3+1. M98 P9100
 3. returns R1=Corner X, R2=Corner Y, R3=Corner Z
 
 ### Setup
