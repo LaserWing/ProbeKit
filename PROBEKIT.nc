@@ -15,12 +15,12 @@ O9100(ProbeKit subprogram)
 (Returns to Start Point)
 
 (---XY Bore Probing: R1+4. ---)
-(R1=Selection, R2=Fixture Offset, R3=Aproximate Bore Diameter)
+(R1=Selection, R2=Fixture Offset, R3=Approximate Bore Diameter)
 (Usage:Jog to center of bore, R1+4. R2+5. R3+5. M98 P9100)
 (Results: R1=Center X, R2=Center Y, R4=Probe Diameter)
 
 (---XY Boss Probing: R1+5. ---)
-(R1=Selection, R2=Fixture Offset, R3=Aproximate Boss Diameter)
+(R1=Selection, R2=Fixture Offset, R3=Approximate Boss Diameter)
 (Usage:Jog to center of boss, R1+5. R2+5. R3+5. M98 P9100)
 (Results: R1=Center X, R2=Center Y, R4=Probe Diameter)
 
@@ -28,9 +28,9 @@ O9100(ProbeKit subprogram)
 #V10 = 1 'Tool Number for tool height offset
 #V11 = 0.2362 'Probe Diameter
 #V12 = 20.0 'Probe feedrate
-#V13 = 1.25 'Bore Overtravel Factor
-#V14 = 1.5 'Boss Overtravel Factor
-#V15 = 0.75 'Boss Z Drop Height
+#V13 = 1.25 'Bore Overtravel Multiplier
+#V14 = 1.5 'Boss Overtravel Multiplier
+#V15 = 0.75 'Boss/Corner Z Drop Height
 
 
 (---Setup---)
