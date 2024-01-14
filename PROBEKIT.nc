@@ -1,5 +1,5 @@
 %
-O9100(ProbeKit subprogram)
+O9100(ProbeKit)
 (The Parent Command of ProbeKit, Single Axis Probing)
 
 (---Axis Probing:  R1-3. to R1+2. ---)
