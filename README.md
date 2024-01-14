@@ -1,4 +1,4 @@
-# ProbeKit Fadal Probing Macros
+# ProbeKit Fadal Renishaw Probing Macros
 Fadals are great machines but unfortunately their probing routines are lacking, and the community's willingness to share is low. Now that these machines are largely moved towards small operations and home shops, there is a need to divorce from the closed macro aspect and share the knowledge needed to improve all our lives.
 
 ## Macro Functions
