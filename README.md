@@ -1,3 +1,14 @@
+## Disclaimer
+# Use At Your Own Risk!
+Many of these macros are untested and may cause damage to your machine. I am not responsible for any damage caused by these macros.
+
+I've primarily tested these macros on the fadal emulator and my Fadal VMC20 with a Renishaw OMP40-2 probe on Format 2. I will be testing this more in the future. Misuse of R values can cause unexpected movement. Start slow and test each macro on single step before using it in production.
+
+## License
+This project is licensed under the GPL v3.0 License - see the [LICENSE.md](LICENSE.md) file for details
+
+Please share any improvements you make to these macros. I would love to see them.
+
 # ProbeKit Fadal Renishaw Probing Macros
 Fadals are great machines but unfortunately their probing routines are lacking, and the community's willingness to share is low. Now that these machines are largely moved towards small operations and home shops, there is a need to divorce from the closed macro aspect and share the knowledge needed to improve all our lives.
 
@@ -100,7 +111,3 @@ Usage:
 `V14 = 1.5 'Boss Overtravel Multiplier`
 `V15 = 0.75 'Boss/Corner Z Drop Height`
 
-
-
-## Disclaimer
-# Use At Your Own Risk!
