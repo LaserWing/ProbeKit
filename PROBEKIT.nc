@@ -49,20 +49,6 @@ G53 (Machine Coordinates)
 G90 (Absolute Mode)
 G17 (XY Plane Selection)
 
-(---Remove Below, testing only---)
-G91 (Relative Mode)
-#R1 = -3.0
-#R2 = 1.0
-#R3 = 4.0
-G0X10.
-Y10.
-G1 F59. X3.
-Y3.
-X-1.
-Y-1.
-G90 (Absolute Mode)
-(---Remove Above, testing only---)
-
 (---R Values to be used in nc lines---)
 #R4 = V12 'Probe feedrate R value
 #R5 = 0.0 
