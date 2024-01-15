@@ -60,7 +60,7 @@ O9101(ProbeKit Helper Program)
 (Usage: R1-2. R2+5. R3+2. M98 P9100)
 R1+V1. R2+V10. R3+V31.
 M98 P9100
-GOTO:END
+#GOTO:END
 
 #:XYBORE
 #PRINT "XY Bore Probing"
