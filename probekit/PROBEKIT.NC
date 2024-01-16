@@ -1,6 +1,6 @@
 %
-O9101(ProbeKit Helper Program)
-(The Parent Command of ProbeKit, Single Axis Probing)
+O9100(ProbeKit Helper Program)
+(The Parent Command of ProbeKit)
 
 (User Variables V30+)
 #V30 = 0
@@ -59,7 +59,7 @@ O9101(ProbeKit Helper Program)
 #PRINT "Axis Probing"
 (Usage: R1-2. R2+5. R3+2. M98 P9100)
 R1+V1. R2+V10. R3+V31.
-M98 P9100
+M98 P9101
 #GOTO:END
 
 #:XYBORE
@@ -69,8 +69,8 @@ M98 P9100
 #PRINT "You have selected bore diameter",V12," YES=ENTER, NO=1"
 #INPUT V2
 #IF V2=1 THEN GOTO:XYBORE
-R1+4. R2+V10. R3+V12.
-M98 P9100
+R1+1. R2+V10. R3+V12.
+M98 P9102
 #GOTO:END
 
 #:XYBOSS
@@ -80,8 +80,8 @@ M98 P9100
 #PRINT "You have selected boss diameter",V12," YES=ENTER, NO=1"
 #INPUT V2
 #IF V2=1 THEN GOTO:XYBOSS
-R1+5. R2+V10. R3+V12.
-M98 P9100
+R1+2. R2+V10. R3+V12.
+M98 P9102
 #GOTO:END
 
 #:CORNER
@@ -108,9 +108,9 @@ M98 P9100
 #INPUT V2
 #IF V2=1 THEN GOTO:CORNERDISTANCEINPUT
 (R1=Selection, R2=Fixture Offset, R3=Probe Distance off Start Corner)
-#R3 = V12+100.
-R1+R3 R2+V10. R3+V12. 
-M98 P9100
+#R3 = V12
+R1+R3. R2+V10. R3+V12. 
+M98 P9103
 #GOTO:END
 
 #:ERROR
