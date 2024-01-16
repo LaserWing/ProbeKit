@@ -27,32 +27,28 @@ This macro is a helper macro that allows you enter the correct values with print
 * Boss
 * Corner
 
-Useful for calling from other programs or from MDI. Use the helper macro to use standalone.
+This macro is a helper macro that allows you enter the correct values with printed prompts. It is not required to use the other macros, but it is good for setup. 
+
+
 This macro was primarily designed to make built L9101 easier to use since it relies on R values and absolute positioning.
 
-Most of these macros start from a known position and return to that position. This is to allow for easy chaining of probing operations.
+Most of these macros start from a known position and return to that position.
 
 ## Command Structure 
-Call `M98 P9100` after setting R values
+Call `M98 P9101 to P9103` after setting R values
 
 R1 is the primary value that controls probe flow. Any assignment of R value needs a decimal point as shown bellow. 
-
-* Single Axis
-    * `R1+1.` probes X+
-    * `R1-1.` probes X-
-    * `R1+2`. probes Y+
-    * `R1-2.` probes Y-
-    * `R1-3.` probes Z-
-* Bore and Boss
-    * `R1+4.` probes bore
-    * `R1+5.` probes boss
-* Corner
-    * `R1+6.` probes corner
 
 ### Axis Probing:  R1-3. to R1+2.
 `R1=Axis Selection`
 `R2=Fixture Offset`
 `R3=Travel Distance`
+* Single Axis `P9101`
+    * `R1+1.` probes X+
+    * `R1-1.` probes X-
+    * `R1+2`. probes Y+
+    * `R1-2.` probes Y-
+    * `R1-3.` probes Z-
 * X and Y remove half of the probe diameter from the fixture offset
 * Z probes with tool height offset
 
@@ -63,10 +59,14 @@ Usage:
 3. returns R4 set to the probed point
 4. Probe moves start point
 
-### XY Bore Probing: R1+4.
+### XY Bore Probing: R1+1.
 `R1=Selection`
 `R2=Fixture Offset`
 `R3=Approximate Bore Diameter`
+* Bore and Boss `P9102`
+    * `R1+1.` probes bore
+    * `R1+2.` probes boss
+
 ##### Results and Returns:
 Usage: 
 1. Jog to center of bore
@@ -74,7 +74,7 @@ Usage:
 3. returns R1=Center X, R2=Center Y, R4=Probe Diameter
 4. Probe moves start point
 
-###XY Boss Probing: R1+5.
+###XY Boss Probing: R1+2.
 `R1=Selection`
 `R2=Fixture Offset`
 `R3=Approximate Bore Diameter`
@@ -85,18 +85,21 @@ Usage:
 3. returns R1=Center X, R2=Center Y, R4=Probe Diameter
 4. Probe moves start point
 
-###XY Corner Probing: R1+6.
-`R1=Selection of Corner 101->104`
+###XY Corner Probing: R1+1.
+`R1=Selection of Corner 1->4`
 `R2=Fixture Offset`
 `R3=Probe Distance Off Start Corner`
-`101-----102`
-`|         |`
-`|         |`
-`104-----103`
+`1-----2`
+`|     |`
+`|     |`
+`4-----3`
+* Corner `P9103`
+    * `R1+1. -> 4.` probes corner. Use negative values to probe interior corners
+
 ##### Results and Returns:
 Usage:
 1. Jog above corner
-2. R1+101. R2+5. R3+1. M98 P9100
+2. R1+1. R2+5. R3+1. M98 P9100
 3. returns R1=Corner X, R2=Corner Y, R3=Corner Z
 
 ### Setup
