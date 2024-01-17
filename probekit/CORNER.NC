@@ -1,13 +1,12 @@
 %
 O9103(ProbeKit Corner Probing)
 (---Corner Probing: R1+1. to R1+4. or R1-1. to R1-4. ---)
-(R1=Selection, R2=Fixture Offset, R3=Probe Distance off Start Corner)
-(R1=Corner to Probe, use negative value for inside corner)
+(R1=Corner Selection, R2=Fixture Offset, R3=Probe Distance off Start Corner)
 (Use negative R-values for inside corner probing)
 ( 1---2 )
 ( |   | )
 ( 1---4 )
-(Usage: Jog to corner, R1+1. R2+5. R3+5. M98 P9100)
+(Usage: Jog to corner, R1+1. R2+5. R3+5. M98 P9103)
 (Result: R1=X, R2=Y, R3=Z)
 
 (---ProbeKit User Variables---)

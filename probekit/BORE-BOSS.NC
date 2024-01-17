@@ -2,12 +2,12 @@
 O9102(ProbeKit Bore Boss Probing)
 (---XY Bore Probing: R1+1. ---)
 (R1=Selection, R2=Fixture Offset, R3=Approximate Bore Diameter)
-(Usage: Jog to center of bore, R1+4. R2+5. R3+5. M98 P9100)
+(Usage: Jog to center of bore, R1+4. R2+5. R3+5. M98 P9102)
 (Results: R1=Center X, R2=Center Y, R4=Probe Diameter)
 
 (---XY Boss Probing: R1+2. ---)
 (R1=Selection, R2=Fixture Offset, R3=Approximate Boss Diameter)
-(Usage: Jog to center of boss, R1+5. R2+5. R3+5. M98 P9100)
+(Usage: Jog to center of boss, R1+5. R2+5. R3+5. M98 P9102)
 (Results: R1=Center X, R2=Center Y, R4=Probe Diameter)
 
 (---ProbeKit User Variables---)

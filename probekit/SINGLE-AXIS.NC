@@ -4,7 +4,7 @@ O9101(ProbeKit Single Axis Probing)
 (R1=Axis Selection, R2=Fixture Offset, R3=Travel Distance)
 (R1+1. for +X, R1+2. for +Y)
 (R1-1. for -X, R1-2. for -Y, R1-3. for -Z)
-(Usage: R1-2. R2+5. R3+2. M98 P9100)
+(Usage: R1-2. R2+5. R3+2. M98 P9101)
 (Results: R4=Probe Point)
 
 (Returns to Start Point)
