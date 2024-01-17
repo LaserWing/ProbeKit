@@ -41,37 +41,37 @@ G17 (XY Plane Selection)
 #R6 = V20 -  ( (R3/2) - V17 ) 'Start Point
 #R7 = AY
 #R8 = AZ
-G1 X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
+G1 G31  X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
 #R8 = AZ - V15 'Drop Probe
-G1 Z+R8. F+R5. (Probe Down)
+G1 G31  Z+R8. F+R5. (Probe Down)
 R6=V20
 R7=AY
 R8=AZ
 L9101 R+1. X+R6. Y+R7. Z+R8. P2(Probe Point)
 #R8 = AZ + V15 'Raise Probe
-G1 Z+R8. F+R5. (Probe Up)
+G1 G31  Z+R8. F+R5. (Probe Up)
 #R6 = V20
 #R7 = V21
 #R8 = V22
-G1 X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
+G1 G31  X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
 (Part 2)
 #R6 = V20 +  ( (R3/2) + V17 ) 'Start Point
 #R7 = AY
 #R8 = AZ
-G1 X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
+G1 G31  X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
 #R8 = AZ - V15 'Drop Probe
-G1 Z+R8. F+R5. (Probe Down)
+G1 G31  Z+R8. F+R5. (Probe Down)
 R6=V20
 R7=AY
 R8=AZ
 L9101 R+1. X+R6. Y+R7. Z+R8. P2 (Probe Point)
 #R8 = AZ + V15 'Raise Probe
-G1 Z+R8. F+R5. (Probe Up)
+G1 G31  Z+R8. F+R5. (Probe Up)
 #FX(V2) = (PX2 - PX1) / 2 'X Center
 #R6 = FX(V2)
 #R7 = V21
 #R8 = V22
-G1 X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
+G1 G31  X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
 #IF (R1 = 3) THEN GOTO:YWEBPROBE
 #:GOTO:END
 
@@ -80,37 +80,37 @@ G1 X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
 #R6 = AX
 #R7 = V21 -  ( (R4/2) - V17 ) 'Start Point
 #R8 = AZ
-G1 X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
+G1 G31  X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
 #R8 = AZ - V15 'Drop Probe
-G1 Z+R8. F+R5. (Probe Down)
+G1 G31  Z+R8. F+R5. (Probe Down)
 R6=AX
 R7=V21
 R8=AZ
 L9101 R+1. X+R6. Y+R7. Z+R8. P2 (Probe Point)
 #R8 = AZ + V15 'Raise Probe
-G1 Z+R8. F+R5. (Probe Up)
+G1 G31  Z+R8. F+R5. (Probe Up)
 #R6 = V20
 #R7 = V21
 #R8 = V22
-G1 X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
+G1 G31  X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
 (Part 2)
 #R6 = AX
 #R7 = V21 +  ( (R4/2) + V17 ) 'Start Point
 #R8 = AZ
-G1 X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
+G1 G31  X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
 #R8 = AZ - V15 'Drop Probe
-G1 Z+R8. F+R5. (Probe Down)
+G1 G31  Z+R8. F+R5. (Probe Down)
 R6=AX
 R7=V21
 R8=AZ
 L9101 R+1. X+R6. Y+R7. Z+R8. P2 (Probe Point)
 #R8 = AZ + V15 'Raise Probe
-G1 Z+R8. F+R5. (Probe Up)
+G1 G31  Z+R8. F+R5. (Probe Up)
 #FY(V2) = (PY2 - PY1) / 2 'Y Center
 #R6 = V20
 #R7 = FY(V2)
 #R8 = V22
-G1 X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
+G1 G31  X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
 #:GOTO:END
 
 #:FAULT

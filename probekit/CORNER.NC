@@ -54,36 +54,36 @@ G17 (XY Plane Selection)
 #IF (R1=4) THEN V18 = 1 'Y Axis Direction Flag
 (X Axis Probe)
 #R7 = V21 + (R3 * V18)
-G1 F+R4 Y+R7 (Move to Y)
+G1 G31 F+R4 Y+R7 (Move to Y)
 #R7 = V20 - (V16 * V17)
-G1 F+R4 X+R7 (Move to X)
+G1 G31 F+R4 X+R7 (Move to X)
 #R7 = V22 - V15
-G1 F+R4 Z+R7 (Move to Z)
+G1 G31 F+R4 Z+R7 (Move to Z)
 #R5 = AZ
 #R6 = AY
 #R7 = AX + (V16 * V17)
 L9101 R1+1. X+R7. Y+R6. Z+R5. F+R4. P1 (Probe X and back to start)
 #R7 = V22 'Move to Z safe height
-G1 F+R4 Z+R7 (Move to Z)
+G1 G31 F+R4 Z+R7 (Move to Z)
 #R7 = V20
 #R8 = V21
-G1 X+R7 Y+R8 (Move to starting X and Y)
+G1 G31 X+R7 Y+R8 (Move to starting X and Y)
 (Y Axis Probe)
 #R7 = V20 + (R3 * V17)
-G1 F+R4 X+R7 (Move to X)
+G1 G31 F+R4 X+R7 (Move to X)
 #R7 = V21 - (V16 * V18)
-G1 F+R4 Y+R7 (Move to Y)
+G1 G31 F+R4 Y+R7 (Move to Y)
 #R7 = V22 - V15
-G1 F+R4 Z+R7 (Move to Z)
+G1 G31 F+R4 Z+R7 (Move to Z)
 #R5 = AZ
 #R6 = AX
 #R7 = AY + (V16 * V18)
 L9101 R1+1. X+R6. Y+R7. Z+R5. F+R4. P2 (Probe Y and back to start)
 #R7 = V22 'Move to Z safe height
-G1 F+R4 Z+R7 (Move to Z)
+G1 G31 F+R4 Z+R7 (Move to Z)
 #R7 = V20
 #R8 = V21
-G1 X+R7 Y+R8 (Move to starting X and Y)
+G1 G31 X+R7 Y+R8 (Move to starting X and Y)
 (Z Axis Probe)
 #R5 = AZ - V15
 #R6 = AY

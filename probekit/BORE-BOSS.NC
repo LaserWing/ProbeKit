@@ -57,7 +57,7 @@ L9101 R1+1. X+R6. Y+R7. F+R4. P3
 L9101 R1+2. (COMPUTE CENTER)
 #FX(V2) = R1
 #FY(V2) = R2
-G1 F+R4 X+R1 Y+R2 (Move to center)
+G1 G31 F+R4 X+R1 Y+R2 (Move to center)
 #GOTO:END
 
 #:BOSSPROBE 'Boss Probe three points circle using math at 60 degree intervals
@@ -68,38 +68,38 @@ G1 F+R4 X+R1 Y+R2 (Move to center)
 (Position 1; 0 o clock)
 #R6 = V20 + R5
 #R7 = V21
-G1 F+R4 Z+R8 (Move to Z height)
-G1 X+R6. Y+R7. F+R4. P1
+G1 G31 F+R4 Z+R8 (Move to Z height)
+G1 G31 X+R6. Y+R7. F+R4. P1
 #R6 = V20
 #R7 = V21
 L9101 R1+1. X+R6. Y+R7. F+R4. P1 (Move back to center)
-G1 F+R4 Z+R9 (Return to safe Z height)
-G1 F+R4 X+R6 Y+R7 (Move to center)
+G1 G31 F+R4 Z+R9 (Return to safe Z height)
+G1 G31 F+R4 X+R6 Y+R7 (Move to center)
 (Position 2; 4 o clock)
 #R6 = V20 + (R5 * cos(300))
 #R7 = V21 + (R5 * sin(300))
-G1 F+R4 Z+R8 (Move to Z height)
-G1 X+R6. Y+R7. F+R4. P2
+G1 G31 F+R4 Z+R8 (Move to Z height)
+G1 G31 X+R6. Y+R7. F+R4. P2
 #R6 = V20
 #R7 = V21
 L9101 R1+1. X+R6. Y+R7. F+R4. P2 (Move back to center)
-G1 F+R4 Z+R9 (Return to safe Z height)
-G1 F+R4 X+R6 Y+R7 (Move to center)
+G1 G31 F+R4 Z+R9 (Return to safe Z height)
+G1 G31 F+R4 X+R6 Y+R7 (Move to center)
 (Position 3; 8 o clock)
 #R6 = V20 + (R5 * cos(150))
 #R7 = V21 + (R5 * sin(150))
-G1 F+R4 Z+R8 (Move to Z height)
-G1 X+R6. Y+R7. F+R4. P3
+G1 G31 F+R4 Z+R8 (Move to Z height)
+G1 G31 X+R6. Y+R7. F+R4. P3
 #R6 = V20
 #R7 = V21
 L9101 R1+1. X+R6. Y+R7. F+R4. P3 (Move back to center)
-G1 F+R4 Z+R9 (Return to safe Z height)
-G1 F+R4 X+R6 Y+R7 (Move to center)
+G1 G31 F+R4 Z+R9 (Return to safe Z height)
+G1 G31 F+R4 X+R6 Y+R7 (Move to center)
 (Calculate Center)
 L9101 R1+2. (COMPUTE CENTER)
 #FX(V2) = R1
 #FY(V2) = R2
-G1 F+R4 X+R1 Y+R2 (Move to center)
+G1 G31 F+R4 X+R1 Y+R2 (Move to center)
 #GOTO:END
 
 #:FAULT
