@@ -1,5 +1,5 @@
 %
-O9104(ProbeKit Corner Probing)
+O9104(ProbeKit Web Probing)
 (---Web Probing: R1+1. ---)
 (R1= X use 1., Y use 2., X&Y use 3.)
 (R2=Fixture Offset)
@@ -35,8 +35,10 @@ G17 (XY Plane Selection)
 #V2 = R2 'Set Input Fixture Offset
 #IF (R1 = 1) THEN GOTO:XWEBPROBE
 #IF (R1 = 2) THEN GOTO:YWEBPROBE
+#IF (R1 = 3) THEN GOTO:XYWEBPROBE
 
 #:XWEBPROBE 'Web Probe two points
+#:XYWEBPROBE 'Web Probe four points
 (Part 1)
 #R6 = V20 -  ( (R3/2) - V17 ) 'Start Point
 #R7 = AY
