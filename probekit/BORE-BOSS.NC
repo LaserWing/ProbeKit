@@ -41,17 +41,17 @@ G17 (XY Plane Selection)
 
 #:BOREPROBE 'Bore Probe three points circle using math at 60 degree intervals
 #R5 = (R3/2.0)*V13 'Movement radius distance with overtravel factor
-(Position 1; 0 o clock)
+(Position 1 at 0 degrees)
 #R6 = V20 + R5
 #R7 = V21
 L9101 R1+1. X+R6. Y+R7. F+R4. P1
-(Position 2; 4 o clock)
-#R6 = V20 + (R5 * cos(300))
-#R7 = V21 + (R5 * sin(300))
+(Position 2 at 240 degrees)
+#R6 = V20 + (R5 * cos(240))
+#R7 = V21 + (R5 * sin(240))
 L9101 R1+1. X+R6. Y+R7. F+R4. P2
-(Position 3; 8 o clock)
-#R6 = V20 + (R5 * cos(150))
-#R7 = V21 + (R5 * sin(150))
+(Position 3 at 120 degrees)
+#R6 = V20 + (R5 * cos(120))
+#R7 = V21 + (R5 * sin(120))
 L9101 R1+1. X+R6. Y+R7. F+R4. P3
 (Calculate Center)
 L9101 R1+2. (COMPUTE CENTER)
@@ -66,7 +66,7 @@ G1 G31 F+R4 X+R1 Y+R2 (Move to center)
 #R8 = V22 - V15 'Z probing height for boss use
 #R9 = V22 'Z safe height
 #R5 = (R3/2.0)*V14 'Movement radius distance with overtravel factor
-(Position 1; 0 o clock)
+(Position 1 0 degrees)
 #R6 = V20 + R5
 #R7 = V21
 G1 G31 F+R4 Z+R8 (Move to Z height)
@@ -76,9 +76,9 @@ G1 G31 X+R6. Y+R7. F+R4. P1
 L9101 R1+1. X+R6. Y+R7. F+R4. P1 (Move back to center)
 G1 G31 F+R4 Z+R9 (Return to safe Z height)
 G1 G31 F+R4 X+R6 Y+R7 (Move to center)
-(Position 2; 4 o clock)
-#R6 = V20 + (R5 * cos(300))
-#R7 = V21 + (R5 * sin(300))
+(Position 2, 240 degrees)
+#R6 = V20 + (R5 * cos(240))
+#R7 = V21 + (R5 * sin(240))
 G1 G31 F+R4 Z+R8 (Move to Z height)
 G1 G31 X+R6. Y+R7. F+R4. P2
 #R6 = V20
@@ -86,9 +86,9 @@ G1 G31 X+R6. Y+R7. F+R4. P2
 L9101 R1+1. X+R6. Y+R7. F+R4. P2 (Move back to center)
 G1 G31 F+R4 Z+R9 (Return to safe Z height)
 G1 G31 F+R4 X+R6 Y+R7 (Move to center)
-(Position 3; 8 o clock)
-#R6 = V20 + (R5 * cos(150))
-#R7 = V21 + (R5 * sin(150))
+(Position 3, 120 degrees)
+#R6 = V20 + (R5 * cos(120))
+#R7 = V21 + (R5 * sin(120))
 G1 G31 F+R4 Z+R8 (Move to Z height)
 G1 G31 X+R6. Y+R7. F+R4. P3
 #R6 = V20
