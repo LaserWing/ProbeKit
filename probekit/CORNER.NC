@@ -90,6 +90,7 @@ G1 G31 X+R7 Y+R8 (Move to starting X and Y)
 #R7 = AX
 L9101 R1+1. X+R7. Y+R6. Z+R5. F+R4. P3 (Probe Z and back to start)
 (Set Values)
+#WAIT
 #FX(V2) = PX1+((V11/2)*V17)
 #FY(V2) = PY2+((V11/2)*V18)
 #FZ(V2)=(ABS(H(V10))+PZ3)*-1 'Account for tool height offset

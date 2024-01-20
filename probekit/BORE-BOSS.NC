@@ -55,6 +55,7 @@ L9101 R1+1. X+R6. Y+R7. F+R4. P2
 L9101 R1+1. X+R6. Y+R7. F+R4. P3
 (Calculate Center)
 L9101 R1+2. (COMPUTE CENTER)
+#WAIT
 #FX(V2) = R1
 #FY(V2) = R2
 G1 G31 F+R4 X+R1 Y+R2 (Move to center)
@@ -97,6 +98,7 @@ G1 G31 F+R4 Z+R9 (Return to safe Z height)
 G1 G31 F+R4 X+R6 Y+R7 (Move to center)
 (Calculate Center)
 L9101 R1+2. (COMPUTE CENTER)
+#WAIT
 #FX(V2) = R1
 #FY(V2) = R2
 G1 G31 F+R4 X+R1 Y+R2 (Move to center)

@@ -69,6 +69,7 @@ R8=AZ
 L9101 R+1. X+R6. Y+R7. Z+R8. P2 (Probe Point)
 #R8 = AZ + V15 'Raise Probe
 G1 G31  Z+R8. F+R5. (Probe Up)
+#WAIT
 #FX(V2) = (PX2 - PX1) / 2 'X Center
 #R6 = FX(V2)
 #R7 = V21
@@ -108,6 +109,7 @@ R8=AZ
 L9101 R+1. X+R6. Y+R7. Z+R8. P2 (Probe Point)
 #R8 = AZ + V15 'Raise Probe
 G1 G31  Z+R8. F+R5. (Probe Up)
+#WAIT
 #FY(V2) = (PY2 - PY1) / 2 'Y Center
 #R6 = V20
 #R7 = FY(V2)

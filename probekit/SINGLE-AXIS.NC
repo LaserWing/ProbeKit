@@ -50,6 +50,7 @@ G17 (XY Plane Selection)
 #R6 = R5 + R6
 #PRINT "Probe X Axis. Moving Towards: X =",R6
 L9101 R1+1. X+R6. Y+R7. Z+R8. F+R4. P1
+#WAIT
 #FX(V2)=PX1+((V11/2)*V1)
 #PRINT "FX=",FX(V2),"For Fixture Offset:",V2
 #R4 = FX(V2) 'Return X value
@@ -59,6 +60,7 @@ L9101 R1+1. X+R6. Y+R7. Z+R8. F+R4. P1
 #R7 = R5 + R7
 #PRINT "Probe Y Axis. Moving Towards: Y =",R7
 L9101 R1+1. X+R6. Y+R7. Z+R8. F+R4. P1
+#WAIT
 #FY(V2)=PY1+((V11/2)*V1)
 #PRINT "FY=",FY(V2),"For Fixture Offset:",V2
 #R4 = FY(V2) 'Return Y value
@@ -69,6 +71,7 @@ G18 (Plane Selection or else L9101 will error)
 #R8 = R5 + R8
 #PRINT "Probe Z Axis. Moving Towards: Z =",R8
 L9101 R1+1. X+R6. Y+R7. Z+R8. F+R4. P1
+#WAIT
 #FZ(V2)=(ABS(H(V10))+PZ1)*-1 'Account for tool height offset
 #PRINT "FZ=",FZ(V2),"For Fixture Offset:",V2
 #R4 = FZ(V2) 'Return Z value
