@@ -62,32 +62,41 @@ G1 G31 F+R4 Y+R7 (Move to Y)
 G1 G31 F+R4 X+R7 (Move to X)
 #R7 = V22 - V15
 G1 G31 F+R4 Z+R7 (Move to Z)
+#WAIT
 #R5 = AZ
 #R6 = AY
 #R7 = AX + (V16 * V17)
 L9101 R1+1. X+R7. Y+R6. Z+R5. F+R4. P1 (Probe X and back to start)
 #R7 = V22 'Move to Z safe height
 G1 G31 F+R4 Z+R7 (Move to Z)
+#WAIT
 #R7 = V20
 #R8 = V21
 G1 G31 X+R7 Y+R8 (Move to starting X and Y)
 (Y Axis Probe)
+#WAIT
 #R7 = V20 + (R3 * V17)
 G1 G31 F+R4 X+R7 (Move to X)
+#WAIT
 #R7 = V21 - (V16 * V18)
 G1 G31 F+R4 Y+R7 (Move to Y)
+#WAIT
 #R7 = V22 - V15
 G1 G31 F+R4 Z+R7 (Move to Z)
+#WAIT
 #R5 = AZ
 #R6 = AX
 #R7 = AY + (V16 * V18)
 L9101 R1+1. X+R6. Y+R7. Z+R5. F+R4. P2 (Probe Y and back to start)
+#WAIT
 #R7 = V22 'Move to Z safe height
 G1 G31 F+R4 Z+R7 (Move to Z)
+#WAIT
 #R7 = V20
 #R8 = V21
 G1 G31 X+R7 Y+R8 (Move to starting X and Y)
 (Z Axis Probe)
+#WAIT
 #R5 = AZ - V15
 #R6 = AY
 #R7 = AX
@@ -101,6 +110,12 @@ L9101 R1+1. X+R7. Y+R6. Z+R5. F+R4. P3 (Probe Z and back to start)
 #R1 = FX(V2)
 #R2 = FY(V2)
 #R3 = FZ(V2)
+#PRINT " "
+#PRINT " "
+#PRINT " "
+#PRINT "X: ", R1, "Y: ", R2, "Z: ", R3
+#PRINT "PRESS ENTER TO EXIT"
+#INPUT V99
 #GOTO:END
 
 #:INTERNALCORNERPROBE
@@ -119,35 +134,46 @@ L9101 R1+1. X+R7. Y+R6. Z+R5. F+R4. P3 (Probe Z and back to start)
 (X Axis Probe)
 #R7 = V21 - (R3 * V18) 'Move off into the part
 G1 G31 F+R4 Y+R7 (Move to Y)
+#WAIT
 #R7 = V20 - (V16 * V17)
 G1 G31 F+R4 X+R7 (Move to X)
+#WAIT
 #R7 = V22 - V15
 G1 G31 F+R4 Z+R7 (Move to Z)
+#WAIT
 #R5 = AZ
 #R6 = AY
 #R7 = AX + (V16 * V17)
 L9101 R1+1. X+R7. Y+R6. Z+R5. F+R4. P1 (Probe X and back to start)
 #R7 = V22 'Move to Z safe height
 G1 G31 F+R4 Z+R7 (Move to Z)
+#WAIT
 #R7 = V20
 #R8 = V21
 G1 G31 X+R7 Y+R8 (Move to starting X and Y)
+#WAIT
 (Y Axis Probe)
 #R7 = V20 - (R3 * V17) 'Move off into the part
 G1 G31 F+R4 X+R7 (Move to X)
+#WAIT
 #R7 = V21 - (V16 * V18)
 G1 G31 F+R4 Y+R7 (Move to Y)
+#WAIT
 #R7 = V22 - V15
 G1 G31 F+R4 Z+R7 (Move to Z)
+#WAIT
 #R5 = AZ
 #R6 = AX
 #R7 = AY + (V16 * V18)
 L9101 R1+1. X+R6. Y+R7. Z+R5. F+R4. P2 (Probe Y and back to start)
+#WAIT
 #R7 = V22 'Move to Z safe height
 G1 G31 F+R4 Z+R7 (Move to Z)
+#WAIT
 #R7 = V20
 #R8 = V21
 G1 G31 X+R7 Y+R8 (Move to starting X and Y)
+#WAIT
 (Z Axis Probe)
 #R5 = AZ - V15
 #R6 = AY
@@ -162,6 +188,12 @@ L9101 R1+1. X+R7. Y+R6. Z+R5. F+R4. P3 (Probe Z and back to start)
 #R1 = FX(V2)
 #R2 = FY(V2)
 #R3 = FZ(V2)
+#PRINT " "
+#PRINT " "
+#PRINT " "
+#PRINT "X: ", R1, "Y: ", R2, "Z: ", R3
+#PRINT "PRESS ENTER TO EXIT"
+#INPUT V99
 #GOTO:END
 
 #:FAULT

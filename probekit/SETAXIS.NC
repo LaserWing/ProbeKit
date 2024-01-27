@@ -61,7 +61,7 @@ O9200 (ProbeKit SetAxis)
 #PRINT "ERROR:"
 #PRINT "ERROR:"
 #PRINT "Reference Tool (Tool 99) length is invalid."
-#PRint "Reference Tool (Tool 99) must be positive length."
+#PRINT "Reference Tool (Tool 99) must be positive length."
 #GOTO :END
 
 #:END

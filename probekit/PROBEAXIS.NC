@@ -52,8 +52,13 @@ G17 (XY Plane Selection)
 L9101 R1+1. X+R6. Y+R7. Z+R8. F+R4. P1
 #WAIT
 #FX(V2)=PX1+((V11/2)*V1)
+#PRINT " "
+#PRINT " "
+#PRINT " "
 #PRINT "FX=",FX(V2),"For Fixture Offset:",V2
 #R4 = FX(V2) 'Return X value
+#PRINT "PRESS ENTER TO EXIT"
+#INPUT V99
 #GOTO:END
 
 #:YPROBE
@@ -62,8 +67,13 @@ L9101 R1+1. X+R6. Y+R7. Z+R8. F+R4. P1
 L9101 R1+1. X+R6. Y+R7. Z+R8. F+R4. P1
 #WAIT
 #FY(V2)=PY1+((V11/2)*V1)
+#PRINT " "
+#PRINT " "
+#PRINT " "
 #PRINT "FY=",FY(V2),"For Fixture Offset:",V2
 #R4 = FY(V2) 'Return Y value
+#PRINT "PRESS ENTER TO EXIT"
+#INPUT V99
 #GOTO:END
 
 #:ZPROBE
@@ -73,9 +83,14 @@ G18 (Plane Selection or else L9101 will error)
 L9101 R1+1. X+R6. Y+R7. Z+R8. F+R4. P1
 #WAIT
 #FZ(V2)=(ABS(H(V10))+PZ1)*-1 'Account for tool height offset
+#PRINT " "
+#PRINT " "
+#PRINT " "
 #PRINT "FZ=",FZ(V2),"For Fixture Offset:",V2
 #R4 = FZ(V2) 'Return Z value
 G17 (Return to XY Plane)
+#PRINT "PRESS ENTER TO EXIT"
+#INPUT V99
 #GOTO:END
 
 #:FAULT

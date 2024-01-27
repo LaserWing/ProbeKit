@@ -44,25 +44,32 @@ G17 (XY Plane Selection)
 #R7 = AY
 #R8 = AZ
 G1 G31  X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
+#WAIT
 #R8 = AZ - V15 'Drop Probe
 G1 G31  Z+R8. F+R5. (Probe Down)
+#WAIT
 R6=V20
 R7=AY
 R8=AZ
 L9101 R+1. X+R6. Y+R7. Z+R8. P2(Probe Point)
+#WAIT
 #R8 = AZ + V15 'Raise Probe
 G1 G31  Z+R8. F+R5. (Probe Up)
+#WAIT
 #R6 = V20
 #R7 = V21
 #R8 = V22
 G1 G31  X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
+#WAIT
 (Part 2)
 #R6 = V20 +  ( (R3/2) + V17 ) 'Start Point
 #R7 = AY
 #R8 = AZ
 G1 G31  X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
+#WAIT
 #R8 = AZ - V15 'Drop Probe
 G1 G31  Z+R8. F+R5. (Probe Down)
+#WAIT
 R6=V20
 R7=AY
 R8=AZ
@@ -75,6 +82,12 @@ G1 G31  Z+R8. F+R5. (Probe Up)
 #R7 = V21
 #R8 = V22
 G1 G31  X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
+#WAIT
+#PRINT " "
+#PRINT " "
+#PRINT " "
+#PRINT "X: ", R6
+#PRINT "PRESS ENTER TO CONTINUE"
 #IF (R1 = 3) THEN GOTO:YWEBPROBE
 #:GOTO:END
 
@@ -84,29 +97,37 @@ G1 G31  X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
 #R7 = V21 -  ( (R4/2) - V17 ) 'Start Point
 #R8 = AZ
 G1 G31  X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
+#WAIT
 #R8 = AZ - V15 'Drop Probe
 G1 G31  Z+R8. F+R5. (Probe Down)
+#WAIT
 R6=AX
 R7=V21
 R8=AZ
 L9101 R+1. X+R6. Y+R7. Z+R8. P2 (Probe Point)
+#WAIT
 #R8 = AZ + V15 'Raise Probe
 G1 G31  Z+R8. F+R5. (Probe Up)
+#WAIT
 #R6 = V20
 #R7 = V21
 #R8 = V22
 G1 G31  X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
+#WAIT
 (Part 2)
 #R6 = AX
 #R7 = V21 +  ( (R4/2) + V17 ) 'Start Point
 #R8 = AZ
 G1 G31  X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
+#WAIT
 #R8 = AZ - V15 'Drop Probe
 G1 G31  Z+R8. F+R5. (Probe Down)
+#WAIT
 R6=AX
 R7=V21
 R8=AZ
 L9101 R+1. X+R6. Y+R7. Z+R8. P2 (Probe Point)
+#WAIT
 #R8 = AZ + V15 'Raise Probe
 G1 G31  Z+R8. F+R5. (Probe Up)
 #WAIT
@@ -115,6 +136,12 @@ G1 G31  Z+R8. F+R5. (Probe Up)
 #R7 = FY(V2)
 #R8 = V22
 G1 G31  X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
+#PRINT " "
+#PRINT " "
+#PRINT " "
+#PRINT "Y: ", R7
+#PRINT "PRESS ENTER TO CONTINUE"
+#INPUT V99
 #:GOTO:END
 
 #:FAULT
@@ -122,6 +149,7 @@ G1 G31  X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
 #GOTO:END
 
 #:END
+#WAIT
 #R1 = FX(V2) 'X Center
 #R2 = FY(V2) 'Y Center
 #R3 = (PX2 - PX1) - #V11 'X Web Length

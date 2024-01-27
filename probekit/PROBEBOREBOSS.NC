@@ -45,23 +45,32 @@ G17 (XY Plane Selection)
 #R6 = V20 + R5
 #R7 = V21
 L9101 R1+1. X+R6. Y+R7. F+R4. P1
+#WAIT
 (Position 2 at 240 degrees)
 #R6 = V20 + (R5 * cos(240))
 #R7 = V21 + (R5 * sin(240))
 L9101 R1+1. X+R6. Y+R7. F+R4. P2
+#WAIT
 (Position 3 at 120 degrees)
 #R6 = V20 + (R5 * cos(120))
 #R7 = V21 + (R5 * sin(120))
 L9101 R1+1. X+R6. Y+R7. F+R4. P3
+#WAIT
 (Calculate Center)
 L9101 R1+2. (COMPUTE CENTER)
 #WAIT
 #FX(V2) = R1
 #FY(V2) = R2
 G1 G31 F+R4 X+R1 Y+R2 (Move to center)
+#PRINT " "
+#PRINT " "
+#PRINT " "
+#PRINT "Center X: ", R1, " Center Y: ", R2
+#PRINT "PRESS ENTER TO EXIT"
+#INPUT V99
 #GOTO:END
 
-#:BOSSPROBE 'Boss Probe three points circle using math at 60 degree intervals
+#:BOSSPROBE
 (Place probe at center of boss above about 1/4 inch)
 #R8 = V22 - V15 'Z probing height for boss use
 #R9 = V22 'Z safe height
@@ -71,37 +80,51 @@ G1 G31 F+R4 X+R1 Y+R2 (Move to center)
 #R7 = V21
 G1 G31 F+R4 Z+R8 (Move to Z height)
 G1 G31 X+R6. Y+R7. F+R4. P1
+#WAIT
 #R6 = V20
 #R7 = V21
 L9101 R1+1. X+R6. Y+R7. F+R4. P1 (Move back to center)
 G1 G31 F+R4 Z+R9 (Return to safe Z height)
 G1 G31 F+R4 X+R6 Y+R7 (Move to center)
+#WAIT
 (Position 2, 240 degrees)
 #R6 = V20 + (R5 * cos(240))
 #R7 = V21 + (R5 * sin(240))
 G1 G31 F+R4 Z+R8 (Move to Z height)
 G1 G31 X+R6. Y+R7. F+R4. P2
+#WAIT
 #R6 = V20
 #R7 = V21
 L9101 R1+1. X+R6. Y+R7. F+R4. P2 (Move back to center)
+#WAIT
 G1 G31 F+R4 Z+R9 (Return to safe Z height)
 G1 G31 F+R4 X+R6 Y+R7 (Move to center)
+#WAIT
 (Position 3, 120 degrees)
 #R6 = V20 + (R5 * cos(120))
 #R7 = V21 + (R5 * sin(120))
 G1 G31 F+R4 Z+R8 (Move to Z height)
 G1 G31 X+R6. Y+R7. F+R4. P3
+#WAIT
 #R6 = V20
 #R7 = V21
 L9101 R1+1. X+R6. Y+R7. F+R4. P3 (Move back to center)
+#WAIT
 G1 G31 F+R4 Z+R9 (Return to safe Z height)
 G1 G31 F+R4 X+R6 Y+R7 (Move to center)
+#WAIT
 (Calculate Center)
 L9101 R1+2. (COMPUTE CENTER)
 #WAIT
 #FX(V2) = R1
 #FY(V2) = R2
 G1 G31 F+R4 X+R1 Y+R2 (Move to center)
+#PRINT " "
+#PRINT " "
+#PRINT " "
+#PRINT "Center X: ", R1, " Center Y: ", R2
+#PRINT "PRESS ENTER TO EXIT"
+#INPUT V99
 #GOTO:END
 
 #:FAULT
