@@ -18,7 +18,7 @@ O9200 (ProbeKit SetAxis)
 #V50 = AX
 #PRINT "Current X position:", V50
 #PRINT "Enter E fixture offset number (1-48):"
-#INPUT V10 'Fixture offset number
+#INPUT V10
 #IF V10 < 1 THEN GOTO :ERROR
 #IF V10 > 48 THEN GOTO :ERROR
 #PRINT "Setting X value of E", V10, " to", V50
@@ -30,7 +30,7 @@ O9200 (ProbeKit SetAxis)
 #V50 = AY
 #PRINT "Current Y position:", V50
 #PRINT "Enter E fixture offset number (1-48):"
-#INPUT V10 'Fixture offset number
+#INPUT V10
 #IF V10 < 1 THEN GOTO :ERROR
 #IF V10 > 48 THEN GOTO :ERROR
 #PRINT "Setting Y value of E", V10, " to", V50
@@ -44,7 +44,7 @@ O9200 (ProbeKit SetAxis)
 #V50 = AZ - H99
 #PRINT "Current Z position with Tool 99:", V50
 #PRINT "Enter E fixture offset number (1-48):"
-#INPUT V10 'Fixture offset number
+#INPUT V10
 #IF V10 < 1 THEN GOTO :ERROR
 #IF V10 > 48 THEN GOTO :ERROR
 #PRINT "Setting Z value of E", V10, " to", V50

@@ -9,7 +9,7 @@ O9103(ProbeKit Corner Probing)
 ( -1   -2 )
 (  |    | )
 ( -4   -3 )
-(Usage: Jog to corner, R1+1. R2+5. R3+5. M98 P9103)
+(Usage: Jog above corner, R1+1. R2+5. R3+5. M98 P9103)
 (Result: R1=X, R2=Y, R3=Z)
 
 (---ProbeKit User Variables---)
