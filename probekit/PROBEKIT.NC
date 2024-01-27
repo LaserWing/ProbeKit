@@ -31,20 +31,11 @@ O9100(ProbeKit Helper Program)
 
 #:SELECTION
 #PRINT "Select probe type:"
-#PRINT "-3. : Z- Axis Probing"
-#PRINT "-2. : Y- Axis Probing"
-#PRINT "-1. : X- Axis Probing"
-#PRINT " 0. : Custom Probing"
-#PRINT "+1. : X+ Axis Probing"
-#PRINT "+2. : Y+ Axis Probing"
-#PRINT "+4. : XY Bore Probing"
-#PRINT "+5. : XY Boss Probing"
-#PRINT "+6. : Corner Probing"
-#PRINT "+7. : Internal Corner Probing"
-#PRINT "+8. : X Web Probing"
-#PRINT "+9. : Y Web Probing"
-#PRINT "+10.: XY Web Probing"
-
+#PRINT "-3.: Z-        -2. : Y-      -1. : X-"
+#PRINT "+1.: X+        +2. : Y+"
+#PRINT "+4.: XY Bore   +5. : XY Boss"
+#PRINT "+6. : Corner   +7. : Internal Corner"
+#PRINT "+8. : X Web    +9. : Y Web   +10.: XY Web"
 
 #INPUT V1
 #PRINT "You have selected probe type",V1," YES=ENTER, NO=1"
