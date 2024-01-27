@@ -38,13 +38,13 @@ G17 (XY Plane Selection)
 
 (Logical Variables)
 #V2 = R2 'Set Input Fixture Offset
-#IF (R1 > 0) THEN GOTO:CORNERPROBE 'Corner Probe
-#IF (R1 < 1) THEN GOTO:INTERNALCORNERPROBE 'Corner Probe
-#IF (R1 = 0) THEN GOTO:FAULT 'Fault
-#IF (R1 < -4 ) THEN GOTO:FAULT 'Fault
-#IF (R1 > 4 ) THEN GOTO:FAULT 'Fault
+#IF (R1 > 0) THEN GOTO:CORNERPROBE
+#IF (R1 < 1) THEN GOTO:INTERNALCORNERPROBE
+#IF (R1 = 0) THEN GOTO:FAULT
+#IF (R1 < -4 ) THEN GOTO:FAULT
+#IF (R1 > 4 ) THEN GOTO:FAULT
 
-#:CORNERPROBE 'Corner Probe two points
+#:CORNERPROBE
 #V17 = 0 'X Axis Direction Flag
 #V18 = 0 'Y Axis Direction Flag
 #IF (R1=1) THEN V17 = 1 'X Axis Direction Flag
@@ -103,7 +103,7 @@ L9101 R1+1. X+R7. Y+R6. Z+R5. F+R4. P3 (Probe Z and back to start)
 #R3 = FZ(V2)
 #GOTO:END
 
-#:INTERNALCORNERPROBE 'Corner Probe two points
+#:INTERNALCORNERPROBE
 #V17 = 0 'X Axis Direction Flag
 #V18 = 0 'Y Axis Direction Flag
 #IF (R1=-1) THEN V17 = -1 'X Axis Direction Flag

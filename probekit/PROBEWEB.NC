@@ -37,8 +37,8 @@ G17 (XY Plane Selection)
 #IF (R1 = 2) THEN GOTO:YWEBPROBE
 #IF (R1 = 3) THEN GOTO:XYWEBPROBE
 
-#:XWEBPROBE 'Web Probe two points
-#:XYWEBPROBE 'Web Probe four points
+#:XWEBPROBE
+#:XYWEBPROBE
 (Part 1)
 #R6 = V20 -  ( (R3/2) - V17 ) 'Start Point
 #R7 = AY
@@ -78,7 +78,7 @@ G1 G31  X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
 #IF (R1 = 3) THEN GOTO:YWEBPROBE
 #:GOTO:END
 
-#:YWEBPROBE 'Web Probe two points
+#:YWEBPROBE
 (Part 1)
 #R6 = AX
 #R7 = V21 -  ( (R4/2) - V17 ) 'Start Point

@@ -36,10 +36,10 @@ G17 (XY Plane Selection)
 
 (Logical Variables)
 #V2 = R2 'Set Input Fixture Offset
-#IF (R1 = 1) THEN GOTO:BOREPROBE 'Bore Probe
-#IF (R1 = 2) THEN GOTO:BOSSPROBE 'Boss Probe
+#IF (R1 = 1) THEN GOTO:BOREPROBE
+#IF (R1 = 2) THEN GOTO:BOSSPROBE
 
-#:BOREPROBE 'Bore Probe three points circle using math at 60 degree intervals
+#:BOREPROBE
 #R5 = (R3/2.0)*V13 'Movement radius distance with overtravel factor
 (Position 1 at 0 degrees)
 #R6 = V20 + R5
