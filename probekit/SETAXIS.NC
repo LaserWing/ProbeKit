@@ -9,7 +9,7 @@ O9200 (ProbeKit SetAxis)
 #V50 = 0 'Position storage
 
 #PRINT "Select Axis: X=1, Y=2, Z=3"
-#INPUT V10 'Axis selection
+#INPUT V11 'Axis selection
 #IF V11 = 1 THEN GOTO :XAXIS
 #IF V11 = 2 THEN GOTO :YAXIS
 #IF V11 = 3 THEN GOTO :ZAXIS
@@ -65,5 +65,9 @@ O9200 (ProbeKit SetAxis)
 #GOTO :END
 
 #:END
+#PRINT " "
+#PRINT "BYE."
+#PRINT " "
+#PRINT " "
 M30
 %
