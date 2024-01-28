@@ -100,7 +100,9 @@ G1 G31 X+R7 Y+R8 (Move to starting X and Y)
 #R5 = AZ - V15
 #R6 = AY
 #R7 = AX
+G18
 L9101 R1+1. X+R7. Y+R6. Z+R5. F+R4. P3 (Probe Z and back to start)
+G17
 (Set Values)
 #WAIT
 #FX(V2) = PX1+((V11/2)*V17)
@@ -178,7 +180,9 @@ G1 G31 X+R7 Y+R8 (Move to starting X and Y)
 #R5 = AZ - V15
 #R6 = AY
 #R7 = AX
+G18
 L9101 R1+1. X+R7. Y+R6. Z+R5. F+R4. P3 (Probe Z and back to start)
+G17
 (Set Values)
 #WAIT
 #FX(V2) = PX1+((V11/2)*V17)
