@@ -2,18 +2,8 @@
 O9100(ProbeKit Helper Program)
 (The Parent Command of ProbeKit)
 
-(User Variables V30+)
-#V30 = 0
 #V31 = 3.0 'Axis Probe Travel Distance
 
-
-(Corner)
-#V35 = 1 'X Movement Distance
-#V36 = 1 'Y Movement Distance
-#V37 = 1 'Z Drop Distance
-#V40 = 0 'X Probe Start Position
-#V41 = 0 'Y Probe Start Position
-#V42 = 0 'Z Probe Safe Position
 
 (ProbeKit Logic Private Variables)
 #V1=0
@@ -103,15 +93,25 @@ M98 P9104
 
 
 #:AXISPROBE
+#PRINT " "
+#PRINT " "
+#PRINT " "
 #PRINT "Axis Probing"
+#PRINT " "
+#PRINT " "
+#PRINT " "
 (Usage: R1-2. R2+5. R3+2. M98 P9100)
 #R1=V1 
 #R2=V10 
 #R3=V31
+#WAIT
 M98 P9101
 #GOTO:END
 
 #:XYBORE
+#PRINT " "
+#PRINT " "
+#PRINT " "
 #PRINT "XY Bore Probing"
 #PRINT "Input Aproximate Bore Diameter:"
 #INPUT V12
@@ -121,10 +121,14 @@ M98 P9101
 #R1=1.
 #R2=V10
 #R3=V12
+#WAIT
 M98 P9102
 #GOTO:END
 
 #:XYBOSS
+#PRINT " "
+#PRINT " "
+#PRINT " "
 #PRINT "XY Boss Probing"
 #PRINT "Input Aproximate Boss Diameter:"
 #INPUT V12
@@ -134,28 +138,29 @@ M98 P9102
 #R1=2. 
 #R2=V10
 #R3=V12
+#WAIT
 M98 P9102
 #GOTO:END
 
 #:CORNER
-#PRINT "Corner Probing"
-#Print "Choose Corner. Enter Number 1-4"
-#Print "1 -- 2"
-#Print "|    |"
-#Print "|    |"
-#Print "3 -- 4"
+#PRINT " "
+#PRINT " "
+#PRINT " "
+#PRINT "Corner Probing, Place Probe Above Corner"
+#PRINT "1 -- 2"
+#PRINT "|    |"
+#PRINT "|    |"
+#PRINT "3 -- 4"
+#PRINT "Choose Corner. Enter Number 1-4"
 #INPUT V12
 #PRINT "You have selected corner",V12," YES=ENTER, NO=1"
 #INPUT V2
 #IF V2=1 THEN GOTO:CORNER
 #:CORNERDISTANCEINPUT
+#PRINT " "
+#PRINT " "
+#PRINT " "
 #PRINT "Input Distance on XY from starting point to probe:"
-#PRINT "-----V----"
-#PRINT "|         |"
-#PRINT "|         |"
-#PRINT "|         <"
-#PRINT "|         |"
-#PRINT "----------"
 #INPUT V13
 #PRINT "You have selected distance",V13," YES=ENTER, NO=1"
 #INPUT V2
@@ -164,10 +169,45 @@ M98 P9102
 #R1=V12
 #R2=V10
 #R3=V13
+#WAIT
+M98 P9103
+#GOTO:END
+
+#:INTERNALCORNER
+#PRINT " "
+#PRINT " "
+#PRINT " "
+#PRINT "Internal Corner Probing, Place Probe Above Corner"
+#PRINT "1 -- 2"
+#PRINT "|    |"
+#PRINT "|    |"
+#PRINT "3 -- 4"
+#PRINT "Choose Corner. Enter Number 1-4"
+#INPUT V12
+#PRINT "You have selected corner",V12," YES=ENTER, NO=1"
+#INPUT V2
+#IF V2=1 THEN GOTO:INTERNALCORNER
+#:INTERNALCORNERDISTANCEINPUT
+#PRINT " "
+#PRINT " "
+#PRINT " "
+#PRINT "Input Distance on XY from starting point to probe:"
+#INPUT V13
+#PRINT "You have selected distance",V13," YES=ENTER, NO=1"
+#INPUT V2
+#IF V2=1 THEN GOTO:INTERNALCORNERDISTANCEINPUT
+(R1=Selection, R2=Fixture Offset, R3=Probe Distance off Start Corner)
+#R1=V12*-1
+#R2=V10
+#R3=V13
+#WAIT
 M98 P9103
 #GOTO:END
 
 #:ERROR
+#PRINT " "
+#PRINT " "
+#PRINT " "
 #PRINT "ERROR: Probe type not found"
 #GOTO:END
 

@@ -23,7 +23,11 @@ O9200 (ProbeKit SetAxis)
 #IF V10 > 48 THEN GOTO :ERROR
 #PRINT "Setting X value of E", V10, " to", V50
 #FX(V10) = V50
+#PRINT " "
+#PRINT " "
 #PRINT "X value for E", V10, " set to", FX(V10)
+#PRINT "Press ENTER to EXIT"
+#INPUT V99
 #GOTO :END
 
 #:YAXIS
@@ -35,7 +39,11 @@ O9200 (ProbeKit SetAxis)
 #IF V10 > 48 THEN GOTO :ERROR
 #PRINT "Setting Y value of E", V10, " to", V50
 #FY(V10) = V50
+#PRINT " "
+#PRINT " "
 #PRINT "Y value for E", V10, " set to", FY(V10)
+#PRINT "Press ENTER to EXIT"
+#INPUT V99
 #GOTO :END
 
 #:ZAXIS
@@ -49,15 +57,23 @@ O9200 (ProbeKit SetAxis)
 #IF V10 > 48 THEN GOTO :ERROR
 #PRINT "Setting Z value of E", V10, " to", V50
 #FZ(V10) = V50
+#PRINT " "
+#PRINT " "
 #PRINT "Z value for E", V10, " set to", FZ(V10)
+#PRINT "Press ENTER to EXIT"
+#INPUT V99
 #GOTO :END
 
 #:ERROR
+#PRINT " "
+#PRINT " "
 #PRINT "ERROR:"
 #PRINT "Fixture offset invalid."
 #GOTO :END
 
 #:ERROR2
+#PRINT " "
+#PRINT " "
 #PRINT "ERROR:"
 #PRINT "ERROR:"
 #PRINT "Reference Tool (Tool 99) length is invalid."
@@ -67,7 +83,5 @@ O9200 (ProbeKit SetAxis)
 #:END
 #PRINT " "
 #PRINT "BYE."
-#PRINT " "
-#PRINT " "
 M30
 %

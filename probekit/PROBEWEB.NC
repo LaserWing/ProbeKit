@@ -145,6 +145,9 @@ G1 G31  X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
 #:GOTO:END
 
 #:FAULT
+#PRINT " "
+#PRINT " "
+#PRINT " "
 #PRINT "Probekit Fault, Input Faulty"
 #GOTO:END
 
