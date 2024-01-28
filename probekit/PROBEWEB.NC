@@ -70,9 +70,9 @@ G1 G31  X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
 #R8 = AZ - V15 'Drop Probe
 G1 G31  Z+R8. F+R5. (Probe Down)
 #WAIT
-R6=V20
-R7=AY
-R8=AZ
+#R6=V20
+#R7=AY
+#R8=AZ
 L9101 R1+1. X+R6. Y+R7. Z+R8. P2 (Probe Point)
 #R8 = AZ + V15 'Raise Probe
 G1 G31  Z+R8. F+R5. (Probe Up)
@@ -123,9 +123,9 @@ G1 G31  X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
 #R8 = AZ - V15 'Drop Probe
 G1 G31  Z+R8. F+R5. (Probe Down)
 #WAIT
-R6=AX
-R7=V21
-R8=AZ
+#R6=AX
+#R7=V21
+#R8=AZ
 L9101 R1+1. X+R6. Y+R7. Z+R8. P2 (Probe Point)
 #WAIT
 #R8 = AZ + V15 'Raise Probe
