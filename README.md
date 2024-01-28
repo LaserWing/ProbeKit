@@ -7,32 +7,34 @@ I've primarily tested these macros on the fadal emulator and my Fadal VMC20 with
 ## License
 This project is licensed under the GPL v3.0 License - see the [LICENSE.md](LICENSE.md) file for details
 
-Please share any improvements you make to these macros. I would love to see them.
+Please share any improvements you make to these macros. I would love to see them. I left the license out of the macros themselves as I know space is limited on the Fadal, but please include the license if you share them.
 
 # ProbeKit Fadal Renishaw Probing Macros
 Fadals are great machines but unfortunately their probing routines are lacking, and the community's willingness to share is low. Now that these machines are largely moved towards small operations and home shops, there is a need to divorce from the closed macro aspect and share the knowledge needed to improve all our lives.
 
-## 09100 ProbeKit Macro Chooser
-This macro is the main macro that allows you to select the other macros. It is not required to use the other macros, but it is quick and prompt based. 
-
-## 09102 SetAxis Macro
+## 09200 SetAxis Macro
 This macro is for use with Haimer style 3d tasters. It is not required to use the other macros, but it is good for setup when a probe is not suitable.
 
-## 09101 Probe Kit Macro Helper
-This macro is a helper macro that allows you enter the correct values with printed prompts. It is not required to use the other macros, but it is good for setup. 
 
 ## O9100 ProbeKit Macro Subprogram
 * Single Axis
 * Bore
 * Boss
 * Corner
+* Internal Corner
+* Web
 
 This macro is a helper macro that allows you enter the correct values with printed prompts. It is not required to use the other macros, but it is good for setup. 
 
-
-This macro was primarily designed to make built L9101 easier to use since it relies on R values and absolute positioning.
-
 Most of these macros start from a known position and return to that position.
+
+
+## A Note On User Values
+Each macro has user variables that can be set to change the default values. These are set in the macro itself. The default values are set for my machine and probe. You will need to change these to match your machine and probe.
+
+These include feed rate, z drop height, tool number, probe diameter, overtravel multipliers, and others.
+
+Refer to each macro for R value usage and user values. 
 
 ## Command Structure 
 Call `M98 P9101 to P9103` after setting R values
