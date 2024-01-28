@@ -16,6 +16,9 @@ Fadals are great machines but unfortunately their probing routines are lacking, 
 This macro is for use with Haimer style 3d tasters. It is not required to use the other macros, but it is good for setup when a probe is not suitable.
 
 
+![Alt text](images/howto.png?raw=true "HowToImage")
+
+
 ## O9100 ProbeKit Macro Subprogram
 * Single Axis
 * Bore
