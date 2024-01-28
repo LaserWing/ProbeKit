@@ -78,8 +78,8 @@ G1 G31 F+R4 X+R1 Y+R2 (Move to center)
 (Position 1 0 degrees)
 #R6 = V20 + R5
 #R7 = V21
-G1 G31 F+R4 Z+R8 (Move to Z height)
 G1 G31 X+R6. Y+R7. F+R4. P1
+G1 G31 F+R4 Z+R8 (Move to Z height)
 #WAIT
 #R6 = V20
 #R7 = V21
@@ -90,8 +90,8 @@ G1 G31 F+R4 X+R6 Y+R7 (Move to center)
 (Position 2, 240 degrees)
 #R6 = V20 + (R5 * cos(240))
 #R7 = V21 + (R5 * sin(240))
-G1 G31 F+R4 Z+R8 (Move to Z height)
 G1 G31 X+R6. Y+R7. F+R4. P2
+G1 G31 F+R4 Z+R8 (Move to Z height)
 #WAIT
 #R6 = V20
 #R7 = V21
@@ -103,8 +103,8 @@ G1 G31 F+R4 X+R6 Y+R7 (Move to center)
 (Position 3, 120 degrees)
 #R6 = V20 + (R5 * cos(120))
 #R7 = V21 + (R5 * sin(120))
-G1 G31 F+R4 Z+R8 (Move to Z height)
 G1 G31 X+R6. Y+R7. F+R4. P3
+G1 G31 F+R4 Z+R8 (Move to Z height)
 #WAIT
 #R6 = V20
 #R7 = V21
