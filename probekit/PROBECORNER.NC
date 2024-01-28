@@ -107,7 +107,7 @@ G17
 #WAIT
 #FX(V2) = PX1+((V11/2)*V17)
 #FY(V2) = PY2+((V11/2)*V18)
-#FZ(V2)=(ABS(H(V10))+PZ3)*-1 'Account for tool height offset
+#FZ(V2)=PZ3 - H(V10) 'Account for tool height offset
 (Returns)
 #R1 = FX(V2)
 #R2 = FY(V2)
@@ -187,7 +187,7 @@ G17
 #WAIT
 #FX(V2) = PX1+((V11/2)*V17)
 #FY(V2) = PY2+((V11/2)*V18)
-#FZ(V2)=(ABS(H(V10))+PZ3)*-1 'Account for tool height offset
+#FZ(V2)=PZ3-H(V10) 'Account for tool height offset
 (Returns)
 #R1 = FX(V2)
 #R2 = FY(V2)
