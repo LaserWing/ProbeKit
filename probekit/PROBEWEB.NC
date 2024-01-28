@@ -40,7 +40,7 @@ G17 (XY Plane Selection)
 #:XWEBPROBE
 #:XYWEBPROBE
 (Part 1)
-#R6 = V20 -  ( (R3/2) - V17 ) 'Start Point
+#R6 = V20 -  ( (R3/2) + V17 ) 'Start Point
 #R7 = AY
 #R8 = AZ
 G1 G31  X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
@@ -94,7 +94,7 @@ G1 G31  X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
 #:YWEBPROBE
 (Part 1)
 #R6 = AX
-#R7 = V21 -  ( (R4/2) - V17 ) 'Start Point
+#R7 = V21 -  ( (R4/2) + V17 ) 'Start Point
 #R8 = AZ
 G1 G31  X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
 #WAIT
