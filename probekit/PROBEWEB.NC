@@ -89,8 +89,7 @@ G1 G31  X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
 #PRINT "X: ", FX(V2)
 #PRINT "PRESS ENTER TO CONTINUE"
 #INPUT V99
-#IF (R1 = 3) THEN GOTO:YWEBPROBE
-#GOTO:END
+#IF (R1 = 1) THEN GOTO:END
 
 #:YWEBPROBE
 (Part 1)
@@ -153,7 +152,6 @@ G1 G31  X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
 #GOTO:END
 
 #:END
-#WAIT
 #R1 = FX(V2) 'X Center
 #R2 = FY(V2) 'Y Center
 #R3 = (PX2 - PX1) - #V11 'X Web Length
