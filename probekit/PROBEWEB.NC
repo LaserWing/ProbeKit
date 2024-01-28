@@ -19,6 +19,11 @@ O9104(ProbeKit Web Probing)
 #V17 = 1 'Overtravel distance each side
 
 
+(---ProbeKit Internal Variables---)
+#V30 = R1
+
+
+
 (---Setup---)
 M64 (Switch to Spindle Probe)
 M66 (Turn On Probe)
@@ -89,7 +94,7 @@ G1 G31  X+R6. Y+R7. Z+R8. F+R5. (Move to Start Point)
 #PRINT "X: ", FX(V2)
 #PRINT "PRESS ENTER TO CONTINUE"
 #INPUT V99
-#IF (R1 = 1) THEN GOTO:END
+#IF (V30 = 1) THEN GOTO:END
 
 #:YWEBPROBE
 (Part 1)
