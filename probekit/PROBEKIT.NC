@@ -2,10 +2,8 @@
 O9100(ProbeKit Helper Program)
 (The Parent Command of ProbeKit)
 
-#V31 = 3.0 'Axis Probe Travel Distance
-
-
 (ProbeKit Logic Private Variables)
+#V31 = 5.0 'Axis Probe Travel Distance
 #V1=0
 #V2=0
 #V10=0
@@ -90,7 +88,6 @@ M98 P9104
 #R4=V13
 M98 P9104
 #GOTO:END
-
 
 #:AXISPROBE
 #PRINT " "

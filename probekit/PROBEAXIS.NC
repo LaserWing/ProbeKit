@@ -7,10 +7,6 @@ O9101(ProbeKit Single Axis Probing)
 (Usage: R1-2. R2+5. R3+2. M98 P9101)
 (Results: R4=Probe Point)
 
-(Returns to Start Point)
-(X and Y remove half of the probe diameter from the fixture offset)
-(Z probes with tool height offset)
-
 (---ProbeKit User Variables---)
 #V10 = 1 'Tool Number for tool height offset
 #V11 = 0.2362 'Probe Diameter

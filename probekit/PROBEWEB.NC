@@ -9,7 +9,6 @@ O9104(ProbeKit Web Probing)
 (Result: R1=X Center, R2=Y Center, R3= X Web Length, R4= Y Web Length)
 (Results only set for all if R1=3.)
 
-
 (---ProbeKit User Variables---)
 #V10 = 1 'Tool Number for tool height offset
 #V11 = 0.2362 'Probe Diameter
@@ -18,12 +17,6 @@ O9104(ProbeKit Web Probing)
 #V16 = 1.5 'Probe inward distance
 #V17 = 1 'Overtravel distance each side
 
-
-(---ProbeKit Internal Variables---)
-#V30 = R1
-
-
-
 (---Setup---)
 M64 (Switch to Spindle Probe)
 M66 (Turn On Probe)
@@ -31,6 +24,7 @@ G80 (Cancel fixed cycles)
 G53 (Machine Coordinates)
 G90 (Absolute Mode)
 G17 (XY Plane Selection)
+#V30 = R1
 #R5 = V12 'Probe feedrate R value
 #V20 = AX 'Start Points
 #V21 = AY

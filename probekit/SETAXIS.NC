@@ -3,7 +3,9 @@ O9200 (ProbeKit SetAxis)
 (For use with a Haimer 3D Taster)
 (Choose axis, enter fixture offset number, set fixture offset to current position)
 (Z Axis will use tool 99 as height reference)
+(Adjust User Variables to suit your machine in each file)
 
+(Setup)
 #V10 = 0 'Fixture offset storage
 #V11 = 0 'Axis selection storage
 #V50 = 0 'Position storage
