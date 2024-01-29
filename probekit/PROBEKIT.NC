@@ -46,40 +46,46 @@ O9100(ProbeKit Helper Program)
 
 #:XWEB
 #PRINT "X Web Probing"
-#PRINT "Input Aproximate Web Diameter:"
+#PRINT "Input Aproximate Web Distance:"
 #INPUT V12
-#PRINT "You have selected web diameter",V12," YES=ENTER, NO=1"
+#PRINT "You have selected web distance",V12," YES=ENTER, NO=1"
 #INPUT V2
 #IF V2=1 THEN GOTO:XWEB
 #R1=1.
 #R2=V10
 #R3=V12
 M98 P9104
+#PRINT "Result X Web Distance:", R3
+#PRINT "Press Enter to Continue"
+#INPUT V2
 #GOTO:END
 
 #:YWEB
 #PRINT "Y Web Probing"
-#PRINT "Input Aproximate Web Diameter:"
+#PRINT "Input Aproximate Web Distance:"
 #INPUT V12
-#PRINT "You have selected web diameter",V12," YES=ENTER, NO=1"
+#PRINT "You have selected web distance",V12," YES=ENTER, NO=1"
 #INPUT V2
 #IF V2=1 THEN GOTO:YWEB
 #R1=2. 
 #R2=V10
 #R4=V12
 M98 P9104
+#PRINT "Result Y Web Distance:", R4
+#PRINT "Press Enter to Continue"
+#INPUT V2
 #GOTO:END
 
 #:XYWEB
 #PRINT "XY Web Probing"
-#PRINT "Input Aproximate X Web Diameter:"
+#PRINT "Input Aproximate X Web Distance:"
 #INPUT V12
-#PRINT "You have selected web diameter",V12," YES=ENTER, NO=1"
+#PRINT "You have selected web distance",V12," YES=ENTER, NO=1"
 #INPUT V2
 #IF V2=1 THEN GOTO:XYWEB
-#PRINT "Input Aproximate Y Web Diameter:"
+#PRINT "Input Aproximate Y Web Distance:"
 #INPUT V13
-#PRINT "You have selected web diameter",V13," YES=ENTER, NO=1"
+#PRINT "You have selected web distance",V13," YES=ENTER, NO=1"
 #INPUT V2
 #IF V2=1 THEN GOTO:XYWEB
 #R1=3.
@@ -87,6 +93,10 @@ M98 P9104
 #R3=V12
 #R4=V13
 M98 P9104
+#PRINT "Result X Web Distance:", R3
+#PRINT "Result Y Web Distance:", R4
+#PRINT "Press Enter to Continue"
+#INPUT V2
 #GOTO:END
 
 #:AXISPROBE
@@ -120,6 +130,9 @@ M98 P9101
 #R3=V12
 #WAIT
 M98 P9102
+#PRINT "Result Bore Diameter:", R4
+#PRINT "Press Enter to Continue"
+#INPUT V2
 #GOTO:END
 
 #:XYBOSS
@@ -137,6 +150,9 @@ M98 P9102
 #R3=V12
 #WAIT
 M98 P9102
+#PRINT "Result Boss Diameter:", R4
+#PRINT "Press Enter to Continue"
+#INPUT V2
 #GOTO:END
 
 #:CORNER

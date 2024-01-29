@@ -3,11 +3,11 @@ O9102(ProbeKit Bore Boss Probing)
 (---XY Bore Probing: R1+1. ---)
 (R1=Selection, R2=Fixture Offset, R3=Approximate Bore Diameter)
 (Usage: Jog to center of bore, R1+4. R2+5. R3+5. M98 P9102)
-(Results: R1=Center X, R2=Center Y, R4=Probe Diameter)
+(Results: R1=Center X, R2=Center Y, R4=Probed Diameter)
 (---XY Boss Probing: R1+2. ---)
 (R1=Selection, R2=Fixture Offset, R3=Approximate Boss Diameter)
 (Usage: Jog to center of boss, R1+5. R2+5. R3+5. M98 P9102)
-(Results: R1=Center X, R2=Center Y, R4=Probe Diameter)
+(Results: R1=Center X, R2=Center Y, R4=Probed Diameter)
 
 (---ProbeKit User Variables---)
 #V10 = 1 'Tool Number for tool height offset
@@ -15,6 +15,8 @@ O9102(ProbeKit Bore Boss Probing)
 #V13 = 1.25 'Bore Overtravel Multiplier
 #V14 = 1.5 'Boss Overtravel Multiplier
 #V15 = 0.75 'Boss Z Drop Height
+#V11 = 0.2362 'Probe Diameter
+
 
 (---Setup---)
 M64 (Switch to Spindle Probe)
@@ -61,6 +63,9 @@ L9101 R1+2. (COMPUTE CENTER)
 #FX(V2) = R1
 #FY(V2) = R2
 G1 G31 F+R4 X+R1 Y+R2 (Move to center)
+(Return results in r4)
+#WAIT
+#R4 = R3 + V11 'Calculate diameter
 #PRINT " "
 #PRINT " "
 #PRINT " "
@@ -118,6 +123,9 @@ L9101 R1+2. (COMPUTE CENTER)
 #FX(V2) = R1
 #FY(V2) = R2
 G1 G31 F+R4 X+R1 Y+R2 (Move to center)
+(Return results in r4)
+#WAIT
+#R4 = (R3*2) - V11 'Calculate diameter
 #PRINT " "
 #PRINT " "
 #PRINT " "
