@@ -95,8 +95,8 @@ Usage:
 `R2=Fixture Offset`
 `R3=Probe Distance Off Start Corner`
 `1-----2`
-`|     |`
-`|     |`
+`:     :`
+`:     :`
 `4-----3`
 * Corner `P9103`
     * `R1+1. -> 4.` probes corner. Use negative values to probe interior corners

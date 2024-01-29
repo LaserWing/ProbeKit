@@ -19,12 +19,12 @@ O9100(ProbeKit Helper Program)
 
 #:SELECTION
 #PRINT "Select probe type:"
-#PRINT "-3.: Z-        -2. : Y-      -1. : X-"
-#PRINT "+1.: X+        +2. : Y+"
-#PRINT "+4.: XY Bore   +5. : XY Boss"
-#PRINT "+6. : Corner   +7. : Internal Corner"
-#PRINT "+8. : X Web    +9. : Y Web   +10.: XY Web"
 
+#PRINT " -X:-1       -Y:-2      -Z:-3"
+#PRINT "  X:1         Y:2"
+#PRINT "  XY Bore:4   XY Boss:5"
+#PRINT "  Corner:6    Inside-Corner:7"
+#PRINT "  X-Web:8     Y-Web:9    XY-Web:10"
 #INPUT V1
 #PRINT "You have selected probe type",V1," YES=ENTER, NO=1"
 #INPUT V2
@@ -119,7 +119,7 @@ M98 P9101
 #PRINT " "
 #PRINT " "
 #PRINT " "
-#PRINT "XY Bore Probing"
+#PRINT "XY Bore Probing (120 Degrees)"
 #PRINT "Input Aproximate Bore Diameter:"
 #INPUT V12
 #PRINT "You have selected bore diameter",V12," YES=ENTER, NO=1"
@@ -139,7 +139,7 @@ M98 P9102
 #PRINT " "
 #PRINT " "
 #PRINT " "
-#PRINT "XY Boss Probing"
+#PRINT "XY Boss Probing (120 Degrees)"
 #PRINT "Input Aproximate Boss Diameter:"
 #INPUT V12
 #PRINT "You have selected boss diameter",V12," YES=ENTER, NO=1"
@@ -161,8 +161,7 @@ M98 P9102
 #PRINT " "
 #PRINT "Corner Probing, Place Probe Above Corner"
 #PRINT "1 -- 2"
-#PRINT "|    |"
-#PRINT "|    |"
+#PRINT ":    :"
 #PRINT "3 -- 4"
 #PRINT "Choose Corner. Enter Number 1-4"
 #INPUT V12
@@ -192,8 +191,7 @@ M98 P9103
 #PRINT " "
 #PRINT "Internal Corner Probing, Place Probe Above Corner"
 #PRINT "1 -- 2"
-#PRINT "|    |"
-#PRINT "|    |"
+#PRINT ":    :"
 #PRINT "3 -- 4"
 #PRINT "Choose Corner. Enter Number 1-4"
 #INPUT V12
