@@ -12,6 +12,10 @@ Please share any improvements you make to these macros. I would love to see them
 # ProbeKit Fadal Renishaw Probing Macros
 Fadals are great machines but unfortunately their probing routines are lacking, and the community's willingness to share is low. Now that these machines are largely moved towards small operations and home shops, there is a need to divorce from the closed macro aspect and share the knowledge needed to improve all our lives.
 
+# Macros Use Positive Tool Length
+All Z macros use positive tool length as well as user selectable tool numbers(default is 1) for probe length 
+
+
 ## 09200 SetAxis Macro
 This macro is for use with Haimer style 3d tasters. It is not required to use the other macros, but it is good for setup when a probe is not suitable.
 
