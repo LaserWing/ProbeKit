@@ -65,7 +65,7 @@ L9101 R1+2. (COMPUTE CENTER)
 G1 G31 F+R4 X+R1 Y+R2 (Move to center)
 (Return results in r4)
 #WAIT
-#R4 = R3 + V11 'Calculate diameter
+#R4 = (R3/2) + V11 'Calculate diameter
 #PRINT " "
 #PRINT " "
 #PRINT " "
