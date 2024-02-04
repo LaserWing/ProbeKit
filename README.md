@@ -3,13 +3,13 @@
 ## ProbeKit Fadal Renishaw Probing Macros
 Fadals are great machines but unfortunately their probing routines are lacking, and the community's willingness to share is low. Now that these machines are largely moved towards small operations and home shops, there is a need to divorce from the closed macro aspect and share the knowledge needed to improve all our lives.
 
-**O9999** - MACROCHOOSER.NC - *Fadal Macro Chooser*
-**O9100** - PROBEKIT.NC - *ProbeKit Macro Subprogram*
-**O9200** - SETAXIS.NC - *SetAxis Macro*
-**O9101** - PROBEAXIS.NC - *Axis Probing Macro*
-**O9102** - PORBEBOREBOSS.NC - *Bore and Boss Probing Macro*
-**O9103** - PROBECORNER.NC - *Corner Probing Macro*
-**O9104** - PROBEWEB.NC - *Web Probing Macro*
+- **O9999** - MACROCHOOSER.NC - *Fadal Macro Chooser*
+- **O9100** - PROBEKIT.NC - *ProbeKit Macro Subprogram*
+- **O9200** - SETAXIS.NC - *SetAxis Macro*
+- **O9101** - PROBEAXIS.NC - *Axis Probing Macro*
+- **O9102** - PORBEBOREBOSS.NC - *Bore and Boss Probing Macro*
+- **O9103** - PROBECORNER.NC - *Corner Probing Macro*
+- **O9104** - PROBEWEB.NC - *Web Probing Macro*
 
 This project is licensed under the GPL v3.0 License - see the [LICENSE.md](LICENSE.md) file for details
 
