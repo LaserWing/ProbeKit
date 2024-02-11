@@ -78,7 +78,7 @@ G18 (Plane Selection or else L9101 will error)
 #PRINT "Probe Z Axis. Moving Towards: Z =",R8
 L9101 R1+1. X+R6. Y+R7. Z+R8. F+R4. P1
 #WAIT
-#FZ(V2)=(ABS(H(V10))+PZ1)*-1 'Account for tool height offset
+#FZ(V2)=PZ1-H(V10) 'Account for tool height offset
 #PRINT " "
 #PRINT " "
 #PRINT " "
