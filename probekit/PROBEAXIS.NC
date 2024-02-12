@@ -84,9 +84,9 @@ L9101 R1+1. X+R6. Y+R7. Z+R8. F+R4. P1
 #PRINT " "
 #PRINT "FZ=",FZ(V2),"For Fixture Offset:",V2
 #R4 = FZ(V2) 'Return Z value
-G17 (Return to XY Plane)
 #PRINT "PRESS ENTER TO EXIT"
 #INPUT V99
+G17 (Return to XY Plane)
 #GOTO:END
 
 #:FAULT
